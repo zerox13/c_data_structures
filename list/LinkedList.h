@@ -51,6 +51,15 @@ List *createList();
  */
 bool insert(List *list,  void *value);
 
+
+/**
+ * @Description       Removes the first node in the list.
+ *
+ * @param list        The list to pop from
+ *
+ * @return           The data of the node (of type void*).
+ *
+ */
 void *pop(List *list);
 
 /**
@@ -70,4 +79,17 @@ void destroyList(List *list, void(*freeData)(void*));
 	*
 **/
 void allocErrorHandle(void *p);
+
+
+
+/**
+	* @Description      Checks if a list is empty or not
+	*
+  * @param list       The list to get freed.
+	*
+	* @return           True if empty, false if not. 
+	*
+**/
+bool isListEmpty(List *list);
+
 #endif /* LINKEDLIST_H */

@@ -46,6 +46,10 @@ void *pop(List *list){
 	return data;
 }
 
+bool isListEmpty(List *list){
+	return (list->root == NULL);
+}
+
 void destroyList(List *list, void(*freeData)(void*)){
 	if(list == NULL || freeData == NULL){
 		fprintf(stderr, "Error: Didnt find parameters!\n");

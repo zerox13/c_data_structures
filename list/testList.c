@@ -5,40 +5,38 @@
 #include "LinkedList.h"
 
 int main(void){
-	printf("hello world\n");
+	printf("Test LinkedList\n\n");
+
+	printf("Creating a list..\n");
 	List *list = createList();
+	printf("Testing if list is empty ----> ");
+	if(isListEmpty(list)){
+		printf("CORRECT! List is empty!!\n");
+	}else{
+		printf("ERROR! SOMETHING IS WRONG!\n");
+	}
 
-	int *data = malloc(sizeof(int));
-	int *data1 = malloc(sizeof(int));
-	int *data2 = malloc(sizeof(int));
-	int *data3 = malloc(sizeof(int));
-	int *data4 = malloc(sizeof(int));
+	int nrOfData = 5;
 
-	*data = 2;
-	*data1 = 3;
-	*data2 = 4;
-	*data3 = 5;
-	*data4 = 6;
 
-	insert(list, (void*)data);
-	insert(list, (void*)data1);
-	insert(list, (void*)data2);
-	insert(list, (void*)data3);
-	insert(list, (void*)data4);
+
+	printf("\n\nCreateing %d nodes\n", nrOfData);
+	for(int i = 0; i<nrOfData; i++){
+		int *data = malloc(sizeof(int));
+		*data = i;
+		insert(list, (void*)data);
+	}
+
+
 	
-	int *datapop = (int*)pop(list);
-	printf("%d\n", *datapop);
+	printf("Testing if they are the same ---> ");
+	for(int i = nrOfData -1; i >= 0; i--){
+		int *datapop = (int*)pop(list);
+		if(*datapop != i){
+			printf("Something is wrong!!!!!\n");
+		}
+	}
 
-	datapop = (int*)pop(list);
-	printf("%d\n", *datapop);
-
-	datapop = (int*)pop(list);
-	printf("%d\n", *datapop);
-
-	datapop = (int*)pop(list);
-	printf("%d\n", *datapop);
-
-	datapop = (int*)pop(list);
-	printf("%d\n", *datapop);
+	printf("Everything is correct!!\n\n");
 
 }
