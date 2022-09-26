@@ -9,6 +9,17 @@
 
 #include "LinkedList.h"
 
+struct lnode{
+	void *value;
+	struct lnode *next;
+};
+typedef struct lnode Lnode;
+
+struct list{
+	Lnode *root;
+};
+
+
 
 List *createList(){
 	List *list = (List*)malloc(sizeof(List));

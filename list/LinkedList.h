@@ -13,17 +13,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <ctype.h>
-//
-//
-struct lnode{
-	void *value;
-	struct lnode *next;
-};
-typedef struct lnode Lnode;
 
-struct list{
-	Lnode *root;
-};
 
 
 typedef struct list List;
